@@ -32,7 +32,7 @@ gem 'bootstrap-sass', '~> 3.3.3'
 gem 'bootstrap_form'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+gem 'omniauth-twitter'
 # Use unicorn as the app server
 # gem 'unicorn'
 
