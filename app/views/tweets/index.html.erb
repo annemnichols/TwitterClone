@@ -1,2 +1,22 @@
-<h1>Tweets#index</h1>
-<p>Find me in app/views/tweets/index.html.erb</p>
+<h1>All Tweets</h1>
+
+<div class="post-table">
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Tweet</th>
+				<th>User</th>
+				<th>Link</th>
+			</tr>
+		</thead>
+		<tbody class="table-list">   
+			<% @tweets.each do |tweet|%>
+				<tr>
+					<td class="col-md-8"><%= tweet.body %></td>
+					<td class="col-md-2"><%= link_to tweet.user.username, user_path(tweet.user) %></td>
+					<td class="col-md-2">button_to 'View Tweet', user_tweet_path(tweet.user, tweet) %></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>
