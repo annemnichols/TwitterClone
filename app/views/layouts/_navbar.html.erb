@@ -1,0 +1,19 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container page-top">
+    <%= link_to "TwitterClone", root_path, class: "navbar-brand" %>
+    <nav>
+      <ul class="nav navbar-nav pull-right">
+        <li><%= link_to "Home", root_path, class: "nav-text" %></li>
+        <% if user_signed_in? %>
+          <li><%= link_to "Profile", user_path(current_user), class: "nav-text" %></li>
+          <li><%= link_to "Users", users_path, class: "nav-text" %></li>
+          <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "nav-text" %></li>
+        <% else %>
+          <li><%= link_to "Sign Up", new_user_registration_path, class: "nav-text" %></li>
+          <li><%= link_to "Log In", new_user_session_path, class: "nav-text" %></li>
+        <% end %>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
