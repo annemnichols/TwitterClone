@@ -1,0 +1,7 @@
+<h1> Edit Tweet </h1>
+<%= form_for [@user, @tweet] do |f| %>
+
+	<%= f.text_field :body %>
+
+	<%= f.submit %>
+<% end %>

@@ -1,7 +1,13 @@
 class TweetsController < ApplicationController
-  before_action :set_user
+  before_action :set_user, except: [:index]
 	before_action :set_tweet, only: [:edit, :update, :destroy, :show]
 
+  def index
+    @tweets = Tweet.all.order("created_at desc")
+  end
+
+  def show
+  end
 
   def new
    if is_authorized?

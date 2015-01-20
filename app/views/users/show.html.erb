@@ -1,2 +1,33 @@
 <h1><%= @user.username %></h1>
 <p>Stuff and things about you!</p>
+
+<% if @user == current_user %>
+	<%= button_to 'New Tweet', new_user_tweet_path(@user), method: :get %>
+<% end %>
+
+<h2>Tweets</h2>
+<div class="tweet-table">
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Tweet</th>
+				<th>Link</th>
+				<% if @user == current_user %>
+					<th>Edit</th>
+				<% end %>
+			</tr>
+		</thead>
+		<tbody class="table-list">   
+			<% @user.tweets.each do |tweet|%>
+				<tr>
+					<td class="col-md-8"><%= tweet.body %></td>
+					<td class="col-md-2"><%= button_to 'View Tweet', user_tweet_path(tweet.user, tweet) %></td>
+					<% if @user == current_user %>
+						<td class="col-md-1"><%= button_to 'Edit', edit_user_tweet_path(tweet.user, tweet), method: :get %></td>
+						<td class="col-md-1"><%= button_to 'Delete', user_tweet_path(tweet.user, tweet), method: :delete %></td>
+					<% end %>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>
