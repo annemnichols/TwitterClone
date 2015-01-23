@@ -33,11 +33,12 @@ gem 'bootstrap_form'
 
 gem 'omniauth-twitter'
 
+gem 'dotenv-rails', :groups => [:development, :test]
+
 gem 'rails_12factor', group: :production
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-gem 'omniauth-twitter'
 # Use unicorn as the app server
 # gem 'unicorn'
 

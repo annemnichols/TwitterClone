@@ -47,7 +47,7 @@ class TweetsController < ApplicationController
      if @tweet.update(tweet_params)
   		redirect_to user_path(@user)
   	 else
-  		  render :edit
+  		render :edit
   	 end
     end
   end
